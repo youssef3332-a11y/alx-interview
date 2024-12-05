@@ -24,24 +24,24 @@ def boundary(grid, i, j):
             boundaries += 1
         elif grid[i-1][j] == 0:
             boundaries += 1
-    except:
+    except IndexError:
         boundaries += 1
     try:
         if grid[i+1][j] == 0:
             boundaries += 1
-    except:
+    except IndexError:
         boundaries += 1
     try:
         if grid[i][j+1] == 0:
             boundaries += 1
-    except:
+    except IndexError:
         boundaries += 1
     try:
         if j == 0:
             boundaries += 1
         elif grid[i][j-1] == 0:
             boundaries += 1
-    except:
+    except IndexError:
         boundaries += 1
 
     if boundaries == 1:
@@ -67,10 +67,10 @@ def island_perimeter(grid):
     """
     if grid == []:
         return 0
-    l = len(grid)
-    w = len(grid[0])
-    for i in range(l):
-        for j in range(w):
+    rows = len(grid)
+    cols = len(grid[0])
+    for i in range(rows):
+        for j in range(cols):
             if grid[i][j] == 1:
                 boundary(grid, i, j)
                 if len(bound_4) != 0:
