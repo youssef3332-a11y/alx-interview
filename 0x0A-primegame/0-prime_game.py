@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+#!/usr/bin/python3
 def isWinner(x, nums):
     # Helper function to generate primes up to a maxim
     def sieve(n):
